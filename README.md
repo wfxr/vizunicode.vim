@@ -1,2 +1,4 @@
-# viz-nr2char
-Visualize vim nr2char
+# viz-unicode
+Visualize vim unicode sequence (and nr2char).
+
+Ported from https://github.com/Xuyuanp/viz-nr2char.
