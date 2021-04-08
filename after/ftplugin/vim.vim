@@ -14,6 +14,10 @@ function! s:VizNr2char() range abort
         if strlen(code)
             execute 'silent! syntax match VizNr2char /\mnr2char(\s*' . code . '\s*)/hs=s+8,he=e-1 containedin=ALL conceal cchar=' . nr2char(code)
         endif
+        let code = matchstr(getline(l:ln), '\m\c\\u\zs\x\{4}\ze')
+        if strlen(code)
+            execute 'silent! syntax match VizNr2char /\m\c\\u' . code . '/ containedin=ALL conceal cchar=' . nr2char(str2nr(code, 16))
+        endif
     endfor
 endfunction
 
