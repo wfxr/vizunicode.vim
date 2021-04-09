@@ -8,7 +8,6 @@ set cpoptions&vim
 
 function! s:VizUnicode() range abort
     setlocal conceallevel=1
-    setlocal concealcursor=n
     for l:ln in range(a:firstline, a:lastline)
         if get(g:, 'vizunicode_nr2char', 0)
             let code = matchstr(getline(l:ln), '\mnr2char(\s*\zs\S\+\ze\s*)')
